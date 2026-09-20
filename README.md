@@ -4,7 +4,7 @@ A [Cookiecutter](https://cookiecutter.readthedocs.io/) template for a self-rende
 tabletop RPG campaign wiki, built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
 Write your campaign in Markdown and YAML with vim (or anything), and get a
-beautiful, dark-themeable static site you can flip through at the table.
+beautiful, themeable static site you can flip through at the table.
 
 ## Features
 
@@ -29,7 +29,7 @@ beautiful, dark-themeable static site you can flip through at the table.
 ## Usage
 
 ```bash
-cookiecutter /Users/bfichera/data/projects/cookiecutter-campaign-wiki
+cookiecutter gh:bfichera/cookiecutter-campaign-wiki
 ```
 
 Answer the prompts:
