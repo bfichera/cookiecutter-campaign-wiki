@@ -1,0 +1,2 @@
+# Where the last session ended. Set with: make mark-session-end <encounter>
+current_encounter: 02_party_debrief

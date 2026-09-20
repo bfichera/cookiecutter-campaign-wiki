@@ -1,0 +1,42 @@
+name: Mira Vale
+size: Medium
+type: humanoid
+subtype: half-elf
+alignment: neutral good
+ac: 12
+ac_type: mage armor 15
+hp: 28
+hit_dice: 5d6 + 10
+speed: 30 ft.
+str: 8
+dex: 14
+con: 14
+int: 16
+wis: 12
+cha: 11
+saves: Int +5, Wis +3
+skills: Arcana +5, History +5, Investigation +5
+senses: darkvision 60 ft., passive Perception 11
+languages: Common, Elvish, Draconic
+cr: null
+traits:
+  - name: Fey Ancestry
+    desc: >-
+      Advantage on saving throws against being charmed, and magic can't put you
+      to sleep.
+  - name: Sculpt Spells
+    desc: >-
+      When you cast an evocation spell that affects others you can see, choose
+      1 + the spell's level creatures; they automatically succeed the save and
+      take no damage if the spell would deal half on a success.
+actions:
+  - name: Fire Bolt (Cantrip)
+    desc: >-
+      Ranged Spell Attack: +5 to hit, range 120 ft., one target. Hit: 11 (2d10)
+      fire damage.
+  - name: Scorching Ray (2nd level)
+    desc: >-
+      Three rays, each a ranged spell attack, +5 to hit, one target per ray.
+      Hit: 7 (2d6) fire damage each.
+  - name: Shield (Reaction, 1st level)
+    desc: +5 bonus to AC until the start of your next turn, including against the triggering attack.

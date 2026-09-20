@@ -1,0 +1,37 @@
+name: Kael Ironwood
+size: Medium
+type: humanoid
+subtype: human
+alignment: lawful good
+ac: 18
+ac_type: plate
+hp: 44
+hit_dice: 5d10 + 15
+speed: 30 ft.
+str: 16
+dex: 12
+con: 16
+int: 10
+wis: 13
+cha: 8
+saves: Str +6, Con +6
+skills: Athletics +6, Intimidation +2, Survival +4
+senses: passive Perception 11
+languages: Common
+cr: null
+traits:
+  - name: Second Wind
+    desc: >-
+      As a bonus action, regain 1d10 + 5 hit points. Recharges on a short or
+      long rest.
+  - name: Action Surge
+    desc: Take one additional action on your turn. Recharges on a short or long rest.
+actions:
+  - name: Longsword
+    desc: >-
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 3)
+      slashing damage, or 9 (1d10 + 3) if used two-handed.
+  - name: Heavy Crossbow
+    desc: >-
+      Ranged Weapon Attack: +4 to hit, range 100/400 ft., one target. Hit: 6
+      (1d10 + 1) piercing damage.

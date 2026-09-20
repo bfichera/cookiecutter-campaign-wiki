@@ -1,0 +1,8 @@
+{
+    "campaign_name": "My Campaign",
+    "campaign_slug": "{{ cookiecutter.campaign_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "dm_name": "The DM",
+    "system": "D&D 5e (2014)",
+    "include_sample_content": ["no", "yes"],
+    "initialize_git": ["yes", "no"]
+}

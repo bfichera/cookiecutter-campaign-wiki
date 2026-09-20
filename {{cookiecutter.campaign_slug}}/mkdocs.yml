@@ -1,0 +1,68 @@
+site_name: {{ cookiecutter.campaign_name }}
+site_description: A {{ cookiecutter.system }} campaign wiki.
+docs_dir: content
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.sections
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/statblock.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - awesome-pages
+  - gen-files:
+      scripts:
+        - gen_pages.py
+  - macros:
+      module_name: main
+
+hooks:
+  - hooks.py
+
+extra:
+  campaign_name: {{ cookiecutter.campaign_name }}
+  dm_name: {{ cookiecutter.dm_name }}
+  system: {{ cookiecutter.system }}

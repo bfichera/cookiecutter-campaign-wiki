@@ -1,0 +1,170 @@
+/* ------------------------------------------------------------------ *
+ * D&D 5e (2014) statblock styling.
+ * Colors adapt to Material's light/dark palette via CSS variables.
+ * ------------------------------------------------------------------ */
+
+:root {
+  --sb-bg: #fdf1dc;
+  --sb-fg: #3a2a12;
+  --sb-accent: #822000;   /* the classic statblock red-orange */
+  --sb-rule: #922610;
+  --sb-heading: #7a200d;
+}
+
+[data-md-color-scheme="slate"] {
+  --sb-bg: #2a241d;
+  --sb-fg: #ece3d4;
+  --sb-accent: #e0603a;
+  --sb-rule: #e0603a;
+  --sb-heading: #e8a07a;
+}
+
+.statblock {
+  display: inline-block;
+  width: 100%;
+  max-width: 420px;
+  margin: 1rem 0;
+  padding: 0.6em 1em 0.5em;
+  background: var(--sb-bg);
+  color: var(--sb-fg);
+  box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.35);
+  font-family: "Noto Sans", "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.25;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+/* Let two statblocks sit side by side on wide screens. */
+@media (min-width: 60em) {
+  .statblock { margin-right: 1rem; }
+}
+
+.statblock h1,
+.statblock h2,
+.statblock h3,
+.statblock h4,
+.statblock p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.statblock-orange-border-top,
+.statblock-orange-border-bottom {
+  display: block;
+  border: none;
+  height: 5px;
+  margin: 0;
+  background: var(--sb-accent);
+  border-radius: 2px;
+}
+.statblock-orange-border-top { margin-bottom: 0.4em; }
+.statblock-orange-border-bottom { margin-top: 0.4em; }
+
+.statblock-creature-heading h1 {
+  font-family: "Libre Baskerville", "Georgia", serif;
+  color: var(--sb-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.statblock-creature-heading h2 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.86rem;
+}
+
+.statblock-tapered-rule {
+  display: block;
+  fill: var(--sb-rule);
+  margin: 0.35em 0;
+}
+
+.statblock-property-line {
+  line-height: 1.3;
+  margin: 0.08em 0;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+.statblock-property-line h4,
+.statblock-property-block h4 {
+  display: inline;
+  font-weight: 700;
+  color: var(--sb-heading);
+}
+.statblock-property-line p,
+.statblock-property-block p {
+  display: inline;
+}
+
+.statblock-property-block {
+  margin: 0.45em 0;
+}
+
+.statblock-abilities {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0.3em 0;
+}
+.statblock-ability h4 {
+  color: var(--sb-heading);
+  font-weight: 700;
+}
+.statblock-ability p {
+  font-size: 0.82rem;
+}
+
+.statblock-actions h3 {
+  font-family: "Libre Baskerville", "Georgia", serif;
+  color: var(--sb-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--sb-rule);
+  margin: 0.5em 0 0.25em;
+  padding-bottom: 0.1em;
+}
+
+.statblock-error {
+  border-left: 4px solid #b00;
+  background: rgba(187, 0, 0, 0.08);
+  padding: 0.5em 0.75em;
+  margin: 1rem 0;
+}
+
+/* ------------------------------------------------------------------ *
+ * Session marker: "start here next" banner + played-encounter tint.
+ * ------------------------------------------------------------------ */
+
+.session-banner {
+  border-left: 5px solid var(--md-accent-fg-color);
+  background: color-mix(in srgb, var(--md-accent-fg-color) 12%, transparent);
+  padding: 0.9em 1.1em;
+  border-radius: 0.3rem;
+  margin: 1.2rem 0;
+  font-size: 1.02rem;
+}
+.session-banner strong { color: var(--md-accent-fg-color); }
+
+/* Applied to the encounter you should start next. */
+.encounter-next {
+  border-left: 5px solid var(--md-accent-fg-color);
+  background: color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent);
+  padding: 0.75em 1em;
+  border-radius: 0.3rem;
+  margin: 0 0 1.2rem 0;
+  font-weight: 600;
+}
+
+/* Subtle tint for encounters already played. */
+.encounter-played {
+  opacity: 0.75;
+  border-left: 4px solid var(--md-default-fg-color--lighter);
+  background: var(--md-default-fg-color--lightest);
+  padding: 0.6em 0.9em;
+  border-radius: 0.3rem;
+  margin: 0 0 1.2rem 0;
+  font-style: italic;
+}
