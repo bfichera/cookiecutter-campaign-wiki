@@ -20,6 +20,11 @@ import yaml
 _ENCOUNTER_RE = re.compile(r"^(\d+)_(.+)\.md$")
 
 
+def _add_callout(markdown, callout):
+    lines = markdown.splitlines()
+    return lines[0] + '\n' + callout + '\n'.join(lines[1:])
+
+
 def _project_dir(config):
     return os.path.dirname(os.path.abspath(config["config_file_path"]))
 
@@ -134,13 +139,13 @@ def on_page_markdown(markdown, page, config, files, **kwargs):
                 "this is the next encounter."
                 "</div>\n\n"
             )
-            markdown = callout + markdown
+            markdown = _add_callout(markdown, callout)
         elif slug in _STATE.get("played", set()):
             callout = (
                 '<div class="encounter-played" markdown="0">'
                 "\N{HEAVY CHECK MARK} Already played."
                 "</div>\n\n"
             )
-            markdown = callout + markdown
+            markdown = _add_callout(markdown, callout)
 
     return markdown
