@@ -103,6 +103,8 @@ def make_character(name):
         fh.write("## Statistics\n")
     with open(os.path.join(cdir, "statblock.yml"), "w", encoding="utf-8") as fh:
         fh.write(STATBLOCK_STUB.format(name=titleize(slug)))
+    with open(os.path.join(cdir, ".pages"), "w", encoding="utf-8") as fh:
+        fh.write("hide: true\n")
     print("Created {}".format(os.path.relpath(cdir, ROOT)))
     return 0
 
